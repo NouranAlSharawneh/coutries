@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+:root {
+  --dark-blue-elements: hsl(209, 23%, 22%);
+  --very-dark-blue-bg: hsl(207, 26%, 17%);
+  --very-dark-blue-text: hsl(200, 15%, 8%);
+  --dark-gray-input: hsl(0, 0%, 52%);
+  --light-gray-bg: hsl(0, 0%, 98%);
+  --white-text: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  color: hsl(200, 15%, 8%);
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+p,
+span,
+a,
+li {
+  font-size: 14px; /* Homepage Items */
+}
+
+.detail-page-text {
+  font-size: 16px; /* Detail Page Text */
+}
+
+/* Light Mode */
+.light-mode {
+  background-color: var(--light-gray-bg);
+  color: var(--very-dark-blue-text);
+  --bg-color: var(--light-gray-bg);
+}
+.light-mode input {
+  color: var(--very-dark-blue-text);
+}
+.light-mode select {
+  background-color: var(--light-gray-bg);
+}
+
+/* Dark Mode */
+.dark-mode-header {
+  color: var(--white-text);
+  background-color: var(--dark-blue-elements);
+}
+.dark-mode {
+  background-color: var(--very-dark-blue-bg);
+  color: var(--white-text);
+  --bg-color: var(--very-dark-blue-bg);
+}
+
+.dark-mode select {
+  background-color: var(--dark-blue-elements);
+}
