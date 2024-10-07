@@ -45,6 +45,9 @@ li {
 .light-mode select {
   background-color: var(--light-gray-bg);
 }
+.light-mode button {
+  background-color: var(--light-gray-bg);
+}
 
 /* Dark Mode */
 .dark-mode-header {
@@ -58,5 +61,8 @@ li {
 }
 
 .dark-mode select {
+  background-color: var(--dark-blue-elements);
+}
+.dark-mode button {
   background-color: var(--dark-blue-elements);
 }

@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Header({ mode, setMode }) {
+  const navigate = useNavigate();
   const handleModeToggle = () => {
     // Toggle between 'light' and 'dark' modes
     setMode(mode === "light" ? "dark" : "light");
@@ -12,7 +14,7 @@ function Header({ mode, setMode }) {
 
   return (
     <header className={mode === "light" ? "light-mode" : "dark-mode-header"}>
-      <p>Where in the world?</p>
+      <p onClick={() => navigate("/")}>Where in the world?</p>
       <div className="mode-toggle" onClick={handleModeToggle}>
         <i
           className={

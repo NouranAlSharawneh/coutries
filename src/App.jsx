@@ -3,6 +3,8 @@ import "./App.css";
 import Header from "./components/Header";
 import SearchAndFilter from "./components/SearchAndFilter";
 import Countries from "./components/Countries";
+import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import CountryDetails from "./components/CountryDetails";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -26,22 +28,35 @@ function App() {
   }, []);
 
   return (
-    <>
+    <BrowserRouter>
       <Header mode={mode} setMode={setMode} />
-      <SearchAndFilter
-        mode={mode}
-        input={input}
-        setInput={setInput}
-        region={region}
-        setRegion={setRegion}
-        data={data}
-        setFilteredData={setFilteredData}
-      />
-      {filteredData.length === 0 && (
-        <p className="no-results">No results found for {input}...</p>
-      )}
-      <Countries mode={mode} filteredData={filteredData} />
-    </>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <SearchAndFilter
+                mode={mode}
+                input={input}
+                setInput={setInput}
+                region={region}
+                setRegion={setRegion}
+                data={data}
+                setFilteredData={setFilteredData}
+              />
+              {filteredData.length === 0 && (
+                <p className="no-results">No results found for {input}...</p>
+              )}
+              <Countries mode={mode} filteredData={filteredData} />
+            </>
+          }
+        />
+        <Route
+          path="country/:countryName"
+          element={<CountryDetails mode={mode} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
